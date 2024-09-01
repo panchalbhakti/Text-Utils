@@ -4,39 +4,39 @@ import React, {useState} from 'react'
 export default function TextForm(props) {
 
     const handleUpClick = () => {
-        console.log("UpperCase was Clicked");
-        let newText = text.toUpperCase();
-        setText(newText);
+      console.log("UpperCase was Clicked");
+      let newText = text.toUpperCase();
+      setText(newText);
     }
 
     const handleLoClick = () => {
       console.log("LowerCase was Clicked");
       let newText = text.toLowerCase();
       setText(newText);
-  }
+    }
 
-  const handleClearClick = () => {
-    console.log("Clear Text was clicked");
-    let newText = '';
-    setText(newText);
-}
+    const handleClearClick = () => {
+      console.log("Clear Text was clicked");
+      let newText = '';
+      setText(newText);
+    }
 
-  const handleOnChange = (event) => {
-        console.log("On change");
-        setText(event.target.value);
+    const handleOnChange = (event) => {
+      console.log("On change");
+      setText(event.target.value);
     }
   
-  const handleCopy = () => {
-    console.log ("I'm Copy");
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-  }
+    const handleCopy = () => {
+      console.log ("I'm Copy");
+      var text = document.getElementById("myBox");
+      text.select();
+      navigator.clipboard.writeText(text.value);
+    }
 
-  const handleExtraSpaces = () => {
-  let newText = text.split(/[ ]+/);
-  setText(newText.join(" "));
-}
+    const handleExtraSpaces = () => {
+      let newText = text.split(/[ ]+/);
+      setText(newText.join(" "));
+    }
 
     const [text, setText] = useState('');
 
